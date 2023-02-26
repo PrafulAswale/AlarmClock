@@ -1,0 +1,107 @@
+@font-face {
+    font-family: digital;
+    src: url("./fonts/digital-7.ttf")
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* animation for shaking clock */
+@keyframes tilt-shaking {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(5deg);
+    }
+
+    50% {
+        transform: rotate(0eg);
+    }
+
+    75% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.shake {
+    animation: tilt-shaking 0.1s infinite;
+}
+
+body,
+.container,
+.timer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    background-color: #FAD961;
+    background-image: linear-gradient(90deg, #FAD961 0%, #F76B1C 100%);
+    min-height: 100vh;
+}
+
+.container {
+    width: 440px;
+    background: #fff;
+    border-radius: 10px;
+    flex-direction: column;
+    padding: 30px 30px 38px;
+}
+
+.container img {
+    max-width: 100px;
+}
+
+.container h1 {
+    font-size: 38px;
+    font-weight: 700;
+    font-family: digital;
+    margin: 30px 0;
+}
+
+.container .timer {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.container .timer.disable {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.timer .time {
+    border-radius: 5px;
+    padding: 0 10px;
+    border: 1px solid #F76B1C;
+    width: calc(100% /3 - 5px);
+}
+
+.time select {
+    outline: none;
+    border: none;
+    height: 53px;
+    width: 100%;
+    font-size: 20px;
+}
+
+.container button {
+    width: 100%;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 20px;
+    padding: 17px 0;
+    border-radius: 17px 0;
+    background-image: linear-gradient(to right, #FF512F 0%, #F09819 51%, #FF512F 100%);
+}
